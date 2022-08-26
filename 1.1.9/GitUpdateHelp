@@ -1,0 +1,11 @@
+1. Clone remote repository locally
+2. Stage commit after editing
+3. Publish commit
+4. Push changes to remote repositroy on GitHub
+
+
+The process looks something like:
+gitclone "URL"
+Commit changes
+Publish changes
+Click on up arrow next to "master branch" in the bottom left
