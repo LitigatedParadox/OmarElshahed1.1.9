@@ -4,7 +4,8 @@ import random
 from playsound import playsound
 import time
 
-#Hide turtle and initialize x variable, which will be used later
+#Hide turtle, set speed to 0, initialize x variable which will be used later
+trtl.speed(0)
 trtl.hideturtle()
 x = -1125
 
