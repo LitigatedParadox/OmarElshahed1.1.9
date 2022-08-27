@@ -1,11 +1,14 @@
+#Import necessary modules
 import turtle as trtl
 import random
 from playsound import playsound
 import time
 
+#Hide turtle and initialize x variable, which will be used later
 trtl.hideturtle()
 x = -1125
 
+#Assign location of audio files to variable to represent notes
 G = r'C:\Users\Shahed\Downloads\School_Downloads\CSP\1.1.9\G.wav'
 A = r'C:\Users\Shahed\Downloads\School_Downloads\CSP\1.1.9\A.wav'
 B = r'C:\Users\Shahed\Downloads\School_Downloads\CSP\1.1.9\B.wav'
@@ -17,7 +20,7 @@ High_G = r'C:\Users\Shahed\Downloads\School_Downloads\CSP\1.1.9\High_G.wav'
 High_A = r'C:\Users\Shahed\Downloads\School_Downloads\CSP\1.1.9\High_A.wav'
 
 
-
+#Define goto_make_circle function and requires 1 positional argument "Y" to run 
 def goto_make_circle(Y):
     trtl.penup()
     trtl.goto(x, Y)
@@ -28,19 +31,14 @@ def goto_make_circle(Y):
     trtl.circle(25)
     trtl.end_fill()
 
-#def PlayNote(FileName):
-#    AudioPath = os.getcwd()
-#    playsound(f'{AudioPath}\{FileName}')
-#   Melody.append(FileName)
-
-
+#Creates list of Y values for staff lines and X values for measures
 Staff_Lines_Y = [-100, -50, 0, 50, 100]
 Measures_X = [-500, 0, 500]
+#Creates empty melody list that notes will be assigned to later
 Melody = []
 
+#Takes user input, "Sudo secret" will play a surprise, other inputs will make the script proceed normally
 Command = input("For those of you who are perturbed by the lack of time signature, key, clef etc. don't worry! Those are all just off the screen. I definitely didn't omit those because they would be too hard to program! ")
-
-
 if Command == "Sudo secret":
     playsound(r'C:\Users\Shahed\youtube-dl\Among Us Drip Theme Song Original (Among Us Trap Remix _ Amogus Meme Music)-grd-K33tOSM.wav')
 else:
@@ -50,7 +48,7 @@ else:
         trtl.goto(-1000, Y_Pos)
         trtl.pendown()
         trtl.forward(2000)
-
+    #Iterates through list of X values that define postitions of measures
     for Measure in Measures_X:
         trtl.penup()
         trtl.goto(Measure, 100)
@@ -59,13 +57,7 @@ else:
         trtl.forward(200)
         trtl.left(90)
 
-
-    trtl.penup()
-    trtl.goto(0, 100)
-    trtl.right(90)
-    trtl.pendown()
-    trtl.forward(200)
-
+    #Generates randomized 8 note melody. Upon each iteration x will be increased by 250 and n will be selected once again from a random range of values 0-9. Each if/elif statement calls the goto_make_circle() function as well as playing a note then appending that note to the Melody list
     for i in range(8):
         x += 250
         n = random.randint(0, 9)
@@ -106,11 +98,12 @@ else:
             playsound(High_G)
             Melody.append(High_G)
 
+#Gives a two second delay before playing the full melody
 time.sleep(2)
 print(Melody)
-
 for note in Melody:
     playsound(note)
-
+    
+    #Keeps turtle screen running throughout script
     wn = trtl.Screen()
     wn.mainloop()
