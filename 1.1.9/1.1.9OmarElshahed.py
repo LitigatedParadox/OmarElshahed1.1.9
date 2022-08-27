@@ -40,7 +40,7 @@ Melody = []
 #Takes user input, "Sudo secret" will play a surprise, other inputs will make the script proceed normally
 Command = input("For those of you who are perturbed by the lack of time signature, key, clef etc. don't worry! Those are all just off the screen. I definitely didn't omit those because they would be too hard to program! ")
 if Command == "Sudo secret":
-    playsound(r'C:\Users\Shahed\youtube-dl\Among Us Drip Theme Song Original (Among Us Trap Remix _ Amogus Meme Music)-grd-K33tOSM.wav')
+    playsound(r'C:\Users\Shahed\youtube-dl\Secret.wav')
 else:
     #Iterates through the list of Y values that each line will start at.
     for Y_Pos in Staff_Lines_Y:
@@ -98,11 +98,11 @@ else:
             playsound(High_G)
             Melody.append(High_G)
 
-#Gives a two second delay before playing the full melody
-time.sleep(2)
-print(Melody)
-for note in Melody:
-    playsound(note)
+    #Gives a two second delay before playing the full melody
+    time.sleep(2)
+    print(Melody)
+    for note in Melody:
+        playsound(note)
     
     #Keeps turtle screen running throughout script
     wn = trtl.Screen()
