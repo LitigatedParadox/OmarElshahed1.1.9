@@ -99,9 +99,7 @@ else:
             playsound(High_G)
             Melody.append(High_G)
 
-    #Gives a two second delay before playing the full melody
-    time.sleep(2)
-    print(Melody)
+    #Plays full melody
     for note in Melody:
         playsound(note)
     
