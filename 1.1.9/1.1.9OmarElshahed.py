@@ -39,7 +39,7 @@ Measures_X = [-500, 0, 500]
 Melody = []
 
 #Takes user input, "Sudo secret" will play a surprise, other inputs will make the script proceed normally
-Command = input("For those of you who are perturbed by the lack of time signature, key, clef etc. don't worry! Those are all just off the screen. I definitely didn't omit those because they would be too hard to program! ")
+Command = input("For those of you who are perturbed by the lack of time signature, key, clef etc. don't worry! Those are all just off the screen.")
 if Command == "Sudo secret":
     playsound(r'C:\Users\Shahed\youtube-dl\Secret.wav')
 else:
