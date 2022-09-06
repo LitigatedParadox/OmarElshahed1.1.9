@@ -106,3 +106,5 @@ else:
     #Keeps turtle screen running throughout script
     wn = trtl.Screen()
     wn.mainloop()
+
+    
