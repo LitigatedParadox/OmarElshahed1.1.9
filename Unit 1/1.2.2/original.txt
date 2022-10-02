@@ -1,0 +1,73 @@
+#   a123_apple_1.py
+import turtle as trtl
+import random as rand
+#-----setup-----
+fruit = "apple.gif" # Store the file name of your shape
+wn = trtl.Screen()
+wn.setup(width=1.0, height=1.0)
+wn.addshape(fruit) # Make the screen aware of the new file
+wn.bgpic("background.gif")
+#Initialize turtles. "apple" refers to the turtle that will fall from the tree, "letter" refers to the turtle that will write out letters
+apple1 = trtl.Turtle()
+apple2 = trtl.Turtle()
+apple3 = trtl.Turtle()
+apple4 = trtl.Turtle()
+apple5 = trtl.Turtle()
+letter = trtl.Turtle()
+letter.penup()
+
+#----Randomization Set Up----
+apple_letters = ["a", "b", "c", "d", "e"]
+dictionary = {"a" : "apple1", "b" : "apple2", "c" : "apple3", "d" : "apple4", "e" : "apple5"}
+apples_list = [apple1, apple2, apple3, apple4, apple5]
+def randomnumber(i):
+  for x in range(i):
+    og_letter = rand.choice(apple_letters)
+
+#Setup for initial natures of apples
+for apple in apples_list:
+  apple.penup()
+  apple.hideturtle()
+  apple.goto(0,0)
+
+#-----functions-----
+# given a turtle, set that turtle to be shaped by the image file
+def draw_apple(active_apple):
+  active_apple.shape(fruit)
+  #display_A()
+  wn.update()
+
+def translation():
+  og_letter = rand.choice(apple_letters)
+  if og_letter in dictionary:
+    trans_apple = og_letter.maketrans(dictionary)
+  print(og_letter)
+  popped_off = apple_letters.index(og_letter)
+  apple_letters.pop(popped_off)
+
+def display_letter(og_letter):
+  letter.color("white")
+  letter.write(og_letter, font = ("Retro", 74, "bold"))
+
+#Function that causes fruit to fall to the cold hard ground
+def Fruit_Fall():
+  #Fruit starts at (0, 0)
+  apple.right(90)
+  apple.forward(200)
+  apple.clear()
+  letter.clear()
+
+#-----function calls-----
+draw_apple(apple)
+Fruit_Fall()
+wn.onkeypress(Fruit_Fall)
+'''translation()'''
+
+#----Events----
+'''for num in range(1):
+  translation()
+  trtl.onkeypress(Fruit_Fall)'''
+
+wn.listen()
+wn.mainloop()
+

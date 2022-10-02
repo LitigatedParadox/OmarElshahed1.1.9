@@ -1,0 +1,9 @@
+1. Why are individual security measures important to the entire internet?
+
+Individual security measures are important to the internet because many important organizations, such as governments or companies, are dependent upon a certain level of cybersecurity to reach their goals, goals which could be irreperably harmed by malicious actors without important cybersecurity measures.
+
+2. How do strong passwords and multi-factor authentication increase security to a restricted application or service?
+
+Strong passwords and multi-factor authentication increase security to a restricted application or service by rendering any possible attacks on systems through brute-force methods near impossible, multi-factor authentication especially makes a remote attack near impossible, as most multi-factor authentication requires authorization from another device that a malicious actor would not have access to.
+
+
